@@ -1,0 +1,16 @@
+[core]
+  pager = most +s +'/---'
+[alias]
+	root = !pwd
+  br = branch
+  ci = commit -v
+  co = checkout
+	lc = show -s --format='%ct' HEAD
+  lp = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  s = status -s
+  d = diff --word-diff
+  st = stash
+  sts = stash save
+  stp = stash pop
+  sta = stash apply
+  stls = stash list
