@@ -1,16 +1,27 @@
 [core]
   pager = most +s +'/---'
+	excludesfile = ~/.gitignore
 [alias]
-	root = !pwd
+  am = commit -v --amend
   br = branch
   ci = commit -v
   co = checkout
-	lc = show -s --format='%ct' HEAD
-  lp = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-  s = status -s
   d = diff --word-diff
+  lc = show -s --format='%ct' HEAD
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  lp = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  m = merge
+  rb = rebase
+  root = !pwd
+  s = status -s
+  sci = dcommit -v
+  srb = svn rebase
   st = stash
-  sts = stash save
-  stp = stash pop
   sta = stash apply
   stls = stash list
+  stp = stash pop
+  sts = stash save
+  undo = reset --soft HEAD^
+  unstage = reset HEAD --
+[diff]
+	mnemonicprefix = true
