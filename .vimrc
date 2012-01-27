@@ -33,6 +33,7 @@ Bundle 'ervandew/supertab'
 Bundle 'Raimondi/delimitMate'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'sophacles/vim-bundle-sparkup'
+Bundle 'danro/rename.vim'
 
 " Syntaxes and such.
 Bundle 'leshill/vim-json'
@@ -44,7 +45,6 @@ Bundle 'plasticboy/vim-markdown'
 Bundle 'jcf/vim-latex'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'wavded/vim-stylus'
-Bundle 'mileszs/ack.vim'
 
 " Python bundles
 Bundle 'kevinw/pyflakes-vim'
@@ -60,7 +60,8 @@ Bundle 'tpope/vim-endwise'
 " Non-github repos
 Bundle 'git://git.wincent.com/command-t.git'
 
-" Fun, but not useful
+" Fun, but not useful"
+Bundle 'tomasr/molokai'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'skammer/vim-css-color'
 Bundle 'mgutz/vim-colors'
@@ -91,7 +92,7 @@ set wildignore+=*.sw?                            " Vim swap files
 set wildignore+=*.DS_Store                       " OSX bullshit
 set wildignore+=*.luac                           " Lua byte code
 set wildignore+=*.pyc                            " Python byte code
-set wildignore+=**.class                          " Cursed Java class files
+set wildignore+=**.class                         " Cursed Java class files
 
 " Save when losing focus
 set autowriteall " Auto-save files when switching buffers or leaving vim.
@@ -103,7 +104,7 @@ au VimResized * exe "normal! \<c-w>="
 
 
 " Colours
-colorscheme chance-of-storm
+colorscheme molokai
 
 " Basic
 syntax enable
