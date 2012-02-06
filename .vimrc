@@ -34,6 +34,8 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'sophacles/vim-bundle-sparkup'
 Bundle 'danro/rename.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'chrisbra/NrrwRgn'
 
 " Syntaxes and such.
 Bundle 'leshill/vim-json'
@@ -56,9 +58,6 @@ Bundle 'vim-scripts/python_match.vim'
 " Ruby specific
 Bundle "vim-ruby/vim-ruby"
 Bundle 'tpope/vim-endwise'
-
-" Non-github repos
-Bundle 'git://git.wincent.com/command-t.git'
 
 " Fun, but not useful"
 Bundle 'tomasr/molokai'
@@ -164,6 +163,7 @@ vnoremap / /\v
 
 " General auto-commands
 """""""""""""""""""""""
+autocmd BufWritePost .vimrc source %
 autocmd FileType * setlocal colorcolumn=0
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 
