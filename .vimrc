@@ -1,16 +1,22 @@
 set encoding=utf-8
-set nocompatible               " be iMproved
+set nocompatible
 set exrc
 set secure
-filetype off                   " required!
+set tags=tags
+set nobk nowb noswf       " Disable backup
+set lazyredraw
+set ttyfast               " Why slow?
+set wrap linebreak        " Automatically break lines
+filetype off
+filetype plugin indent on
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-" let Vundle manage Vundle
+" Vundle for vim package-management
 Bundle 'gmarik/vundle'
 
-" Vundle help
+" Using vundle
 """"""""""""""
 " :BundleList          - list configured bundles
 " :BundleInstall(!)    - install(update) bundles
@@ -36,17 +42,19 @@ Bundle 'sophacles/vim-bundle-sparkup'
 Bundle 'danro/rename.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'chrisbra/NrrwRgn'
+Bundle 'mattn/zencoding-vim'
+Bundle 'edsono/vim-matchit'
+Bundle 'hkjels/t.vim'
 
 " Syntaxes and such.
 Bundle 'leshill/vim-json'
-Bundle 'tpope/vim-liquid'
-Bundle 'rodjek/vim-puppet'
 Bundle 'tpope/vim-haml'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'jcf/vim-latex'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'wavded/vim-stylus'
+Bundle 'msanders/cocoa.vim'
 
 " Python bundles
 Bundle 'kevinw/pyflakes-vim'
@@ -58,24 +66,22 @@ Bundle 'vim-scripts/python_match.vim'
 " Ruby specific
 Bundle "vim-ruby/vim-ruby"
 Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-liquid'
 
 " Fun, but not useful"
 Bundle 'tomasr/molokai'
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'skammer/vim-css-color'
 Bundle 'mgutz/vim-colors'
-Bundle 'ehamberg/vim-cute-python'
 Bundle 'tpope/vim-speeddating'
 Bundle 'Lokaltog/vim-powerline'
 
-filetype plugin indent on     " required!
 
 " Configurations
 """"""""""""""""
 if has('gui_running')
-	set background=light
+  set background=light
 else
-	set background=dark
+  set background=dark
 endif
 
 " Wildmenu completion
@@ -92,6 +98,7 @@ set wildignore+=*.DS_Store                       " OSX bullshit
 set wildignore+=*.luac                           " Lua byte code
 set wildignore+=*.pyc                            " Python byte code
 set wildignore+=**.class                         " Cursed Java class files
+set wildignore+=*node_modules                    " Node project-dependencies
 
 " Save when losing focus
 set autowriteall " Auto-save files when switching buffers or leaving vim.
@@ -101,12 +108,16 @@ au TabLeave * silent! :wa
 " Resize splits when the window is resized
 au VimResized * exe "normal! \<c-w>="
 
+" Easy tab-switching
+noremap <d-s-right> :tabnext<cr>
+noremap <d-s-left> :tabprevious<cr>
 
 " Colours
 colorscheme molokai
 
 " Basic
 syntax enable
+set mouse=a
 set number        " always show line numbers
 set hidden        " Allow un-saved buffers in background
 set clipboard=unnamed " Share system clipboard.
@@ -238,19 +249,14 @@ let g:gist_clip_command = 'pbcopy'
 let g:gist_detect_filetype = 2
 let g:gist_show_privates = 1
 
-" TaskList
-"map <leader>l <Plug>TaskList
-
 " TagBar
 nnoremap <silent> <F2> :TagbarToggle<CR>
 let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
 let g:tagbar_autoshowtag = 1
 
-" Command-T
-nnoremap <Leader>t :CommandT<CR>
-
 " NERDTree
 nnoremap <Leader>g :NERDTreeToggle<CR>
+let g:ctrlp_dont_split = 'NERD_tree_2'
 
 " SnipMate
 let g:snippets_dir = "~/.vim/bundle/snipmate-snippets"
@@ -268,3 +274,15 @@ au Syntax * RainbowParenthesesLoadBraces
 set laststatus=2
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_jump=0
+
+fun! s:RemoveWhitespace()
+  if &bin | return | endif
+  if search('\s\+$', 'n')
+    let line = line('.') | let col = col('.')
+    sil %s/\s\+$//ge
+    call cursor(line, col)
+    echo 'Removed trailing whitespace.'
+  else
+    echo 'No trailing whitespace found.'
+  endif
+endf
