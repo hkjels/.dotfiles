@@ -1,3 +1,9 @@
-#.dotfiles
+# .dotfiles
 
-My personal preferences for shell & applications
+__My personal zshell, vim & git preferences__
+
+
+
+## Install
+
+    curl https://raw.github.com/hkjels/.dotfiles/master/install.sh | sh
