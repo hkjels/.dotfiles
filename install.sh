@@ -30,35 +30,27 @@ if [[ -x `which yum` ]]; then
 fi
 
 
-# Fetch dotfiles
+# Fetch dependencies
 git clone git@github.com:hkjels/.dotfiles.git $DOTFILES
+git clone git@github.com:hkjels/zshuery.git $GITHUB/zshuery
+git clone https://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle
+vim +BundleInstall +qall
+
+# Install zsh if it's not already installed
+if [[ -x `which zsh` ]]; then
+  inst zsh
+fi
+
+# Install a graphical vim if it's not already installed
+if [[ $IS_MAC && !$HAS_MVIM ]]; then
+  inst mvim
+fi
+if [[ $IS_LINUX && !$HAS_GVIM ]]; then
+  inst gvim
+fi
+
 
 # Link dotfiles to current user
 ln -s $DOTFILES/.gitconfig $HOME
 ln -s $DOTFILES/.zshrc $HOME
 ln -s $DOTFILES/.vimrc $HOME
-
-
-# Set up vim
-git clone https://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle
-
-# Set up zshuery
-git clone git@github.com:hkjels/zshuery.git $GITHUB/zshuery
-
-
-# Install zsh if it's not installed
-if [[ -x `which zsh` ]]; then
-  inst zsh
-fi
-
-
-# Install mvim if on a mac and it's not installed
-if [[ $IS_MAC && !$HAS_MVIM ]]; then
-  inst mvim
-fi
-
-
-# Install gvim if on linux and it's not installed
-if [[ $IS_LINUX && !$HAS_GVIM ]]; then
-  inst gvim
-fi
