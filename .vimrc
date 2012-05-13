@@ -98,7 +98,8 @@ set wildignore+=*.DS_Store                       " OSX bullshit
 set wildignore+=*.luac                           " Lua byte code
 set wildignore+=*.pyc                            " Python byte code
 set wildignore+=**.class                         " Cursed Java class files
-set wildignore+=*node_modules                    " Node project-dependencies
+set wildignore+=node_modules                     " Node project-dependencies
+set wildignore+=curses.h                         " Ctags storage
 
 " Save when losing focus
 set autowriteall " Auto-save files when switching buffers or leaving vim.
@@ -203,6 +204,16 @@ autocmd FileType php setlocal colorcolumn=100
 au BufNewFile,BufReadPost python setlocal shiftwidth=2 expandtab
 autocmd FileType python setlocal colorcolumn=80
 autocmd FileType python let g:pep8_map='<F4>'
+
+" Stylus configurations
+"""""""""""""""""""""""
+syntax enable
+autocmd BufNewFile,BufReadPost *.styl set filetype=stylus
+
+" Jade configurations
+"""""""""""""""""""""""
+syntax enable
+autocmd BufNewFile,BufReadPost *.jade set filetype=jade
 
 " Coffeescript configurations
 """""""""""""""""""""""""""""

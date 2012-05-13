@@ -1,0 +1,11 @@
+# Only search with case sensitivity if there is mixed case
+--smart-case
+
+# Ignore
+--ignore-dir=.git
+--ignore-dir=.sass-cache
+--ignore-dir=.todo
+--ignore-dir=apk
+--ignore-dir=caching
+--ignore-dir=node_modules
+--ignore-dir=tmp

@@ -1,1 +1,10 @@
+# Files
+
 .DS_Store
+
+
+
+# Directories
+
+.todo
+npm_modules

@@ -52,6 +52,4 @@ vim +BundleInstall +qall
 
 
 # Link dotfiles to current user
-ln -s $DOTFILES/.gitconfig $HOME
-ln -s $DOTFILES/.zshrc $HOME
-ln -s $DOTFILES/.vimrc $HOME
+find $DOTFILES -type f -iname ".*" -exec ln -s {} $HOME \;
