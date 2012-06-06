@@ -21,17 +21,17 @@ if [[ $(uname) = 'Darwin' ]]; then
   fi
 fi
 if [[ -x `which brew` ]]; then
-  inst() {
+  fetch() {
     brew install $*
   }
 fi
 if [[ -x `which apt-get` ]]; then
-  inst() {
+  fetch() {
     sudo apt-get install $*
   }
 fi
 if [[ -x `which yum` ]]; then
-  inst() {
+  fetch() {
     su -c yum install $*
   }
 fi
@@ -44,16 +44,17 @@ fi
 
 git clone git@github.com:hkjels/.dotfiles.git $DOTFILES; cd $DOTFILES
 git submodule update --init --recursive
-if [[ !$HAS_ZSH ]]; then
-  inst zsh
-fi
-if [[ $IS_MAC && !$HAS_MVIM ]]; then
-  inst mvim
-fi
-if [[ $IS_LINUX && !$HAS_GVIM ]]; then
-  inst gvim
-fi
 vim +BundleInstall +qall
+
+# if [[ !$HAS_ZSH ]]; then
+#   fetch zsh
+# fi
+# if [[ $IS_MAC && !$HAS_MVIM ]]; then
+#   fetch mvim
+# fi
+# if [[ $IS_LINUX && !$HAS_GVIM ]]; then
+#   fetch gvim
+# fi
 
 
 # Link dotfiles to current user
