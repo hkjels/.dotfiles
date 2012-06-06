@@ -42,6 +42,7 @@ fi
 
 # Fetch & install dependencies
 
+echo -e "\n    Fetch .dotfiles\n"
 git clone git@github.com:hkjels/.dotfiles.git $DOTFILES; cd $DOTFILES
 git submodule update --init --recursive
 
@@ -58,8 +59,22 @@ git submodule update --init --recursive
 
 # Link dotfiles to current user
 
+echo -e "\n    Link .dotfiles to current $(whoami)\n"
 for file in $(find $DOTFILES -type f -name "*.link"); do ln -is $file $HOME/$(basename ${file%.link}); done
-source $HOME/.zshrc
 
+
+# Change shell
+
+chsh -s /usr/local/bin/zsh $(whoami)
+
+
+# Post installation work
+
+echo -e "\n    Setup vim with vundle, (this might take a while!)\n"
 vim +BundleInstall +qall
+
+# Complete
+
+echo -e "\n    Installation complete\nNext time you open a terminal, you will"
+echo -e "be presented with zsh at your prompt\n"
 
