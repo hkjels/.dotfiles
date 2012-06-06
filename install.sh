@@ -44,7 +44,6 @@ fi
 
 git clone git@github.com:hkjels/.dotfiles.git $DOTFILES; cd $DOTFILES
 git submodule update --init --recursive
-vim +BundleInstall +qall
 
 # if [[ !$HAS_ZSH ]]; then
 #   fetch zsh
@@ -61,4 +60,6 @@ vim +BundleInstall +qall
 
 for file in $(find $DOTFILES -type f -name "*.link"); do ln -is $file $HOME/$(basename ${file%.link}); done
 source $HOME/.zshrc
+
+vim +BundleInstall +qall
 
