@@ -10,7 +10,7 @@ set wrap linebreak        " Automatically break lines
 filetype off
 filetype plugin indent on
 
-set rtp+=~/.dotfiles/vim/bundle/vundle/
+set rtp=~/.dotfiles/vim/bundle/vundle/
 call vundle#rc()
 
 " Vundle for vim package-management
