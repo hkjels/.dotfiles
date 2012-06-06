@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 
 # Paths
@@ -52,6 +52,6 @@ vim +BundleInstall +qall
 
 # Link dotfiles to current user
 
-for file in $(find $DOTFILES -type f -name "*.link"); do ln -is $file $HOME/${$(basename $file)/.link/}; done
+for file in $(find $DOTFILES -type f -name "*.link"); do ln -is $file $HOME/$(basename ${file%.link/}); done
 source $HOME/.zshrc
 
