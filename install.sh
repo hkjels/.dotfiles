@@ -21,13 +21,19 @@ if [[ $(uname) = 'Darwin' ]]; then
   fi
 fi
 if [[ -x `which brew` ]]; then
-  alias inst='brew install'
+  inst() {
+    brew install $*
+  }
 fi
 if [[ -x `which apt-get` ]]; then
-  alias inst='sudo apt-get install'
+  inst() {
+    sudo apt-get install $*
+  }
 fi
 if [[ -x `which yum` ]]; then
-  alias inst='su -c yum install'
+  inst() {
+    su -c yum install $*
+  }
 fi
 if [[ -x `which zsh` ]]; then
   HAS_ZSH=true
@@ -52,6 +58,6 @@ vim +BundleInstall +qall
 
 # Link dotfiles to current user
 
-for file in $(find $DOTFILES -type f -name "*.link"); do ln -is $file $HOME/$(basename ${file%.link/}); done
+for file in $(find $DOTFILES -type f -name "*.link"); do ln -is $file $HOME/$(basename ${file%.link}); done
 source $HOME/.zshrc
 
