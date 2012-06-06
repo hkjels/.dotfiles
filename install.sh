@@ -2,11 +2,12 @@
 
 
 # Paths
-GITHUB=$HOME/Github
-DOTFILES=$GITHUB/dotfiles
+
+DOTFILES=$HOME/.dotfiles
 
 
 # Checks
+
 if [[ $(uname) = 'Linux' ]]; then
   IS_LINUX=true
   if [[ -x `which gvim`  ]]; then
@@ -34,10 +35,9 @@ fi
 
 
 # Fetch & install dependencies
-git clone git@github.com:hkjels/.dotfiles.git $DOTFILES
-git clone git@github.com:hkjels/zshuery.git $GITHUB/zshuery
-git clone https://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle
 
+git clone git@github.com:hkjels/.dotfiles.git $DOTFILES; cd $DOTFILES
+git submodule update --init --recursive
 if [[ !$HAS_ZSH ]]; then
   inst zsh
 fi
@@ -47,9 +47,10 @@ fi
 if [[ $IS_LINUX && !$HAS_GVIM ]]; then
   inst gvim
 fi
-
 vim +BundleInstall +qall
 
 
 # Link dotfiles to current user
-find $DOTFILES -type f -iname ".*" -exec ln -s {} $HOME \;
+
+find $DOTFILES -type f -iname "*.link" -exec ln -s {} $HOME \;
+

@@ -9,3 +9,6 @@
 --ignore-dir=caching
 --ignore-dir=node_modules
 --ignore-dir=tmp
+
+# Types
+--type-set=sass=.sass,.scss
