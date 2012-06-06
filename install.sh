@@ -52,5 +52,5 @@ vim +BundleInstall +qall
 
 # Link dotfiles to current user
 
-find $DOTFILES -type f -iname "*.link" -exec ln -s {} $HOME \;
+for file in $(find $DOTFILES -type f -name "*.link"); do ln -s $file $HOME/${$(basename $file)/.link/}; done
 
