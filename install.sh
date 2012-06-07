@@ -31,7 +31,7 @@ git submodule update --init --recursive
 
 # Link dotfiles to current user
 
-echo "\n    Link .dotfiles to current $(whoami)\n"
+echo -e "\n    Symlink .dotfiles to $HOME\n"
 for file in $(find $DOTFILES -type f -name "*.link"); do ln -is $file $HOME/$(basename ${file%.link}); done
 
 
