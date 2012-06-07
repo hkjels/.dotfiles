@@ -10,7 +10,7 @@ set wrap linebreak        " Automatically break lines
 filetype off
 filetype plugin indent on
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp=~/.dotfiles/vim/bundle/vundle/
 call vundle#rc()
 
 " Vundle for vim package-management
@@ -29,7 +29,7 @@ Bundle 'tpope/vim-fugitive'
 
 " System
 Bundle 'scrooloose/nerdtree'
-Bundle 'vim-scripts/Gist.vim'
+Bundle 'mattn/gist-vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'mileszs/ack.vim'
 Bundle 'scrooloose/nerdcommenter'

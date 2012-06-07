@@ -1,12 +1,13 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 
 # Paths
-GITHUB=$HOME/Github
-DOTFILES=$GITHUB/dotfiles
+
+DOTFILES=$HOME/.dotfiles
 
 
 # Checks
+
 if [[ $(uname) = 'Linux' ]]; then
   IS_LINUX=true
   if [[ -x `which gvim`  ]]; then
@@ -20,13 +21,19 @@ if [[ $(uname) = 'Darwin' ]]; then
   fi
 fi
 if [[ -x `which brew` ]]; then
-  alias inst='brew install'
+  fetch() {
+    brew install $*
+  }
 fi
 if [[ -x `which apt-get` ]]; then
-  alias inst='sudo apt-get install'
+  fetch() {
+    sudo apt-get install $*
+  }
 fi
 if [[ -x `which yum` ]]; then
-  alias inst='su -c yum install'
+  fetch() {
+    su -c yum install $*
+  }
 fi
 if [[ -x `which zsh` ]]; then
   HAS_ZSH=true
@@ -34,22 +41,40 @@ fi
 
 
 # Fetch & install dependencies
-git clone git@github.com:hkjels/.dotfiles.git $DOTFILES
-git clone git@github.com:hkjels/zshuery.git $GITHUB/zshuery
-git clone https://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle
 
-if [[ !$HAS_ZSH ]]; then
-  inst zsh
-fi
-if [[ $IS_MAC && !$HAS_MVIM ]]; then
-  inst mvim
-fi
-if [[ $IS_LINUX && !$HAS_GVIM ]]; then
-  inst gvim
-fi
+echo -e "\n    Fetch .dotfiles\n"
+git clone git@github.com:hkjels/.dotfiles.git $DOTFILES; cd $DOTFILES
+git submodule update --init --recursive
 
-vim +BundleInstall +qall
+# if [[ !$HAS_ZSH ]]; then
+#   fetch zsh
+# fi
+# if [[ $IS_MAC && !$HAS_MVIM ]]; then
+#   fetch mvim
+# fi
+# if [[ $IS_LINUX && !$HAS_GVIM ]]; then
+#   fetch gvim
+# fi
 
 
 # Link dotfiles to current user
-find $DOTFILES -type f -iname ".*" -exec ln -s {} $HOME \;
+
+echo -e "\n    Link .dotfiles to current $(whoami)\n"
+for file in $(find $DOTFILES -type f -name "*.link"); do ln -is $file $HOME/$(basename ${file%.link}); done
+
+
+# Change shell
+
+chsh -s /usr/local/bin/zsh $(whoami)
+
+
+# Post installation work
+
+echo -e "\n    Setup vim with vundle, (this might take a while!)\n"
+vim +BundleInstall +qall
+
+# Complete
+
+echo -e "\n    Installation complete\nNext time you open a terminal, you will"
+echo -e "be presented with zsh at your prompt\n"
+

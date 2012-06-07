@@ -13,3 +13,4 @@
 # Types
 --type-set=jade=.jade
 --type-set=stylus=.styl
+--type-set=sass=.sass,.scss
