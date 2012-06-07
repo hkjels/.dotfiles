@@ -10,7 +10,7 @@ set wrap linebreak        " Automatically break lines
 filetype off
 filetype plugin indent on
 
-set rtp=~/.dotfiles/vim/bundle/vundle/
+set rtp+=~/.dotfiles/vim/bundle/vundle/
 call vundle#rc()
 
 " Vundle for vim package-management
@@ -69,11 +69,10 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-liquid'
 
 " Fun, but not useful"
-Bundle 'tomasr/molokai'
+Bundle 'flazz/vim-colorschemes'
 Bundle 'skammer/vim-css-color'
 Bundle 'mgutz/vim-colors'
 Bundle 'tpope/vim-speeddating'
-Bundle 'Lokaltog/vim-powerline'
 
 
 " Configurations
@@ -114,8 +113,10 @@ noremap <d-s-right> :tabnext<cr>
 noremap <d-s-left> :tabprevious<cr>
 
 " Colours
-colorscheme molokai
-
+" see http://vimcolorschemetest.googlecode.com/svn/html/index-c.html
+colorscheme summerfruit256
+" colorscheme colorful
+" colorscheme molokai
 " Basic
 syntax enable
 set mouse=a
