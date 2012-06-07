@@ -42,8 +42,8 @@ DOTFILES=$HOME/.dotfiles
 
 # Fetch & install dependencies
 
-echo -e "\n    Fetch .dotfiles\n"
-git clone git@github.com:hkjels/.dotfiles.git $DOTFILES; cd $DOTFILES
+echo "\n    Fetch .dotfiles\n"
+git clone https://github.com/hkjels/.dotfiles $DOTFILES; cd $DOTFILES
 git submodule update --init --recursive
 
 # if [[ !$HAS_ZSH ]]; then
@@ -59,7 +59,7 @@ git submodule update --init --recursive
 
 # Link dotfiles to current user
 
-echo -e "\n    Link .dotfiles to current $(whoami)\n"
+echo "\n    Link .dotfiles to current $(whoami)\n"
 for file in $(find $DOTFILES -type f -name "*.link"); do ln -is $file $HOME/$(basename ${file%.link}); done
 
 
@@ -70,6 +70,6 @@ chsh -s /usr/local/bin/zsh $(whoami)
 
 # Post installation work
 
-echo -e "\n    Setup vim with vundle, (this might take a while!)\n"
+echo "\n    Setup vim with vundle, (this might take a while!)\n"
 vim +BundleInstall +qall
 
