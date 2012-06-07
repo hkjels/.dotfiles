@@ -8,36 +8,36 @@ DOTFILES=$HOME/.dotfiles
 
 # Checks
 
-if [[ $(uname) = 'Linux' ]]; then
-  IS_LINUX=true
-  if [[ -x `which gvim`  ]]; then
-    $HAS_GVIM=true
-  fi
-fi
-if [[ $(uname) = 'Darwin' ]]; then
-  IS_MAC=true
-  if [[ -x `which mvim`  ]]; then
-    $HAS_MVIM=true
-  fi
-fi
-if [[ -x `which brew` ]]; then
-  fetch() {
-    brew install $*
-  }
-fi
-if [[ -x `which apt-get` ]]; then
-  fetch() {
-    sudo apt-get install $*
-  }
-fi
-if [[ -x `which yum` ]]; then
-  fetch() {
-    su -c yum install $*
-  }
-fi
-if [[ -x `which zsh` ]]; then
-  HAS_ZSH=true
-fi
+# if [[ $(uname) = 'Linux' ]]; then
+#   IS_LINUX=true
+#   if [[ -x `which gvim`  ]]; then
+#     $HAS_GVIM=true
+#   fi
+# fi
+# if [[ $(uname) = 'Darwin' ]]; then
+#   IS_MAC=true
+#   if [[ -x `which mvim`  ]]; then
+#     $HAS_MVIM=true
+#   fi
+# fi
+# if [[ -x `which brew` ]]; then
+#   fetch() {
+#     brew install $*
+#   }
+# fi
+# if [[ -x `which apt-get` ]]; then
+#   fetch() {
+#     sudo apt-get install $*
+#   }
+# fi
+# if [[ -x `which yum` ]]; then
+#   fetch() {
+#     su -c yum install $*
+#   }
+# fi
+# if [[ -x `which zsh` ]]; then
+#   HAS_ZSH=true
+# fi
 
 
 # Fetch & install dependencies
@@ -72,9 +72,4 @@ chsh -s /usr/local/bin/zsh $(whoami)
 
 echo -e "\n    Setup vim with vundle, (this might take a while!)\n"
 vim +BundleInstall +qall
-
-# Complete
-
-echo -e "\n    Installation complete\nNext time you open a terminal, you will"
-echo -e "be presented with zsh at your prompt\n"
 
