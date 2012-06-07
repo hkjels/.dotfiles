@@ -11,7 +11,7 @@ filetype off
 filetype plugin indent on
 
 set rtp=~/.dotfiles/vim/bundle/vundle/
-call vundle#rc(~/.dotfiles/vim/bundle/)
+call vundle#rc()
 
 " Vundle for vim package-management
 Bundle 'gmarik/vundle'
