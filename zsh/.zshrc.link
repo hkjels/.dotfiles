@@ -29,9 +29,9 @@ prompts '%{$fg_bold[green]%}$(COLLAPSED_DIR)%{$reset_color%}$(virtualenv_info) %
 if [[ $IS_MAC -eq 1 ]]; then
     # Add OSX default paths
     eval `/usr/libexec/path_helper -s`
-    export EDITOR='mvim -f --nomru -c "au VimLeave * !open -a Terminal"'
+    export EDITOR='mvim -f'
 else
-    export EDITOR='vim'
+    export EDITOR='vim -f'
 fi
 
 chpwd() {

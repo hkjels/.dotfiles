@@ -19,6 +19,12 @@ s() {
         fi
     done
 
+    # Pre hooks
+    if [[ -x "$(git root)/.git/hooks/pre-svn-$1" ]] then
+        $(git root)/.git/hooks/pre-svn-$1 2>&1
+        if [[ $? -eq 1 ]] then; return; fi
+    fi
+
     # git-svn procedures
     case $1 in
         (rebase|fetch|\-\-help|tag|log|find\-rev|(create|show)\-ignore|mkdirs\\
@@ -33,5 +39,10 @@ s() {
             echo $* | xargs git
         ;;
     esac
+
+    # Post hooks
+    if [[ -x "$(git root)/.git/hooks/post-svn-$1" ]] then
+        $(git root)/.git/hooks/post-svn-$1
+    fi
 }
 

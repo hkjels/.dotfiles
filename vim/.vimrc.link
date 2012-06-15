@@ -112,6 +112,10 @@ au VimResized * exe "normal! \<c-w>="
 noremap <d-s-right> :tabnext<cr>
 noremap <d-s-left> :tabprevious<cr>
 
+" Prevent de-select when indenting blocks
+vnoremap < <gv
+vnoremap > >gv
+
 " Colours
 " see http://vimcolorschemetest.googlecode.com/svn/html/index-c.html
 colorscheme summerfruit256
