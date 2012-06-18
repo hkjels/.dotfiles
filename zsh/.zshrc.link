@@ -6,10 +6,6 @@ if [ -f $HOME/.profile ]; then
     source $HOME/.profile
 fi
 
-# Load configurations
-
-for config_file ($ZSH/*.zsh) source $config_file
-
 # Load zshuery
 
 source $HOME/Github/zshuery/zshuery.sh
@@ -33,6 +29,10 @@ if [[ $IS_MAC -eq 1 ]]; then
 else
     export EDITOR='vim -f'
 fi
+
+# Load configurations
+
+for config_file ($ZSH/*.zsh) source $config_file
 
 chpwd() {
     update_terminal_cwd
