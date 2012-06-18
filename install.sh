@@ -6,21 +6,36 @@
 DOTFILES=$HOME/.dotfiles
 
 
-# Checks
+# Configure installer
 
-if [[ -x `which zsh` ]]; then
-  HAS_ZSH=1
-fi
-if [[ -x `which brew` && HAS_ZSH -ne 1 ]]; then
-  brew install zsh
-fi
-if [[ -x `which apt-get`  && HAS_ZSH -ne 1 ]]; then
-  sudo apt-get install zsh
-fi
-if [[ -x `which yum`  && !HAS_ZSH -ne 1 ]]; then
-  su -c yum install zsh
+if [[ -x `which brew` ]]; then
+  fetch () {
+    brew install $*
+  }
+elif [[ -x `which apt-get`  && HAS_ZSH -ne 1 ]]; then
+  fetch () {
+    sudo apt-get install $*
+  }
+elif [[ -x `which yum`  && !HAS_ZSH -ne 1 ]]; then
+  fetch () {
+    su -c yum install $*
+  }
+else
+  echo -e "\n    Could not reliably detect a packagemanager\n"
+  exit 1
 fi
 
+
+# Install dependencies
+
+if [[ ! -x `which zsh` ]]; then
+  fetch zsh
+fi
+if [[ ! -x `which j` ]]; then
+  fetch autojump
+fi
+
+return
 
 # Install .dotfiles
 
