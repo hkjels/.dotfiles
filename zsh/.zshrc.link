@@ -37,3 +37,6 @@ for config_file ($ZSH/*.zsh) source $config_file
 chpwd() {
     update_terminal_cwd
 }
+
+
+export PATH=$PATH:$HOME/.dotfiles/bin

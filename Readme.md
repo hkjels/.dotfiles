@@ -26,6 +26,13 @@ straight forward though.
     curl https://raw.github.com/hkjels/.dotfiles/master/uninstall.sh | sh
 
 
+## Usefull information
+
+*  Extends zshuery and janus.vim
+*  Use \`pkg\` for managing packages
+*  Vim key-mapping available in your shell
+
+
 ## License
 
 > (The MIT License)
