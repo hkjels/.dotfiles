@@ -9,6 +9,7 @@ set ttyfast               " Why slow?
 set wrap linebreak        " Automatically break lines
 filetype off
 filetype plugin indent on
+filetype plugin on
 
 set rtp+=~/.dotfiles/vim/bundle/vundle/
 call vundle#rc()
@@ -45,6 +46,7 @@ Bundle 'chrisbra/NrrwRgn'
 Bundle 'mattn/zencoding-vim'
 Bundle 'edsono/vim-matchit'
 Bundle 'hkjels/t.vim'
+Bundle 'tsaleh/vim-align'
 
 " Syntaxes and such.
 Bundle 'leshill/vim-json'
@@ -55,6 +57,7 @@ Bundle 'jcf/vim-latex'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'wavded/vim-stylus'
 Bundle 'msanders/cocoa.vim'
+Bundle 'chrisbra/csv.vim'
 
 " Python bundles
 Bundle 'kevinw/pyflakes-vim'
@@ -222,6 +225,8 @@ autocmd BufNewFile,BufReadPost *.jade set filetype=jade
 
 " Coffeescript configurations
 """""""""""""""""""""""""""""
+syntax enable
+autocmd BufNewFile,BufReadPost *.coffee set filetype=coffee
 au BufNewFile,BufReadPost *.coffee setlocal foldmethod=indent
 au BufNewFile,BufReadPost *.coffee setlocal shiftwidth=2 expandtab
 
@@ -244,7 +249,6 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 
 " Genral
 noremap <silent> <F3> :QFix<CR>
-
 
 " Change leader
 let mapleader = ","

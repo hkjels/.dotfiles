@@ -8,13 +8,12 @@ fi
 
 # Load zshuery
 
-source $HOME/Github/zshuery/zshuery.sh
+source $ZSH/zshuery/zshuery.sh
 load_defaults
 load_aliases
 load_lol_aliases
-load_completion $HOME/Github/zshuery/completion
+load_completion $ZSH/zshuery/completion
 load_correction
-load_vim_input
 
 # Prompt appearence
 
@@ -23,11 +22,11 @@ prompts '%{$fg_bold[green]%}$(COLLAPSED_DIR)%{$reset_color%}$(virtualenv_info) %
 # Path & editor choice
 
 if [[ $IS_MAC -eq 1 ]]; then
-    # Add OSX default paths
-    eval `/usr/libexec/path_helper -s`
-    export EDITOR='mvim -f'
+  # Add OSX default paths
+  eval `/usr/libexec/path_helper -s`
+  export EDITOR='mvim -f'
 else
-    export EDITOR='vim -f'
+  export EDITOR='vim -f'
 fi
 
 # Load configurations
@@ -35,7 +34,7 @@ fi
 for config_file ($ZSH/*.zsh) source $config_file
 
 chpwd() {
-    update_terminal_cwd
+  update_terminal_cwd
 }
 
 
