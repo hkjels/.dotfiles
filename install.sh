@@ -30,8 +30,8 @@ fi
 if [[ ! -x `which zsh` ]]; then
   pkg install zsh
 fi
-if [[ ! -x `which j` ]]; then
-  pkg install autojump
+if [[ ! -x `which z` ]]; then
+  pkg install z
 fi
 
 

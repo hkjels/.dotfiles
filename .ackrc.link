@@ -12,5 +12,6 @@
 
 # Types
 --type-set=jade=.jade
+--type-set=coffee=.coffee
 --type-set=stylus=.styl
 --type-set=sass=.sass,.scss

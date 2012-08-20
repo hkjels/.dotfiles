@@ -1,6 +1,5 @@
 
 # Vim-styled input for the commandline
-
 bindkey -v
 
 # Search backwards and forwards with a pattern

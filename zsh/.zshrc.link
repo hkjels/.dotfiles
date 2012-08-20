@@ -17,7 +17,7 @@ load_correction
 
 # Prompt appearence
 
-prompts '%{$fg_bold[green]%}$(COLLAPSED_DIR)%{$reset_color%}$(virtualenv_info) %{$fg[yellow]%}$(prompt_char)%{$reset_color%} ' '%{$fg[red]%}$(ruby_version)%{$reset_color%}'
+prompts '%{$fg_bold[green]%}$(COLLAPSED_DIR)%{$reset_color%}$(virtualenv_info) %{$fg[yellow]%}${$(prompt_char)/\$/λ}%{$reset_color%} ' '%{$fg[red]%}$(ruby_version)%{$reset_color%}'
 
 # Path & editor choice
 
@@ -31,7 +31,8 @@ fi
 
 # Load configurations
 
-for config_file ($ZSH/*.zsh) source $config_file
+for file in $ZSH/**/*.zsh
+  source $file
 
 chpwd() {
   update_terminal_cwd
