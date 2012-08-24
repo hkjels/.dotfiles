@@ -33,6 +33,9 @@ fi
 if [[ ! -x `which z` ]]; then
   pkg install z
 fi
+if [[ ! -x `which ctags` ]]; then
+  pkg install ctags
+fi
 
 
 # Link dotfiles to current user

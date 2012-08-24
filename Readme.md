@@ -10,10 +10,7 @@ __My personal zshell, vim & git preferences__
 I mostly code on OS-X, so these preferences are more optimized for Darwin than
 Linux, but I've taken Linux into concideration. The key-bindings in zsh is set
 up to somewhat mimic vim, but with addition of a few usefull emacs-like
-bindings. There are two dependencies that not yet has found their way into the
-installer. __Excuberant ctags__ & __Ntask__. Installing them should be pretty
-straight forward though.
-
+bindings.
 
 
 ## Install
@@ -30,7 +27,6 @@ straight forward though.
 
 *  Extends zshuery and janus.vim
 *  Use \`pkg\` for managing packages
-*  Vim key-mapping available in your shell
 
 
 ## License
