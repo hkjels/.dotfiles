@@ -36,6 +36,12 @@ autocmd FileType crontab setlocal backupcopy=yes
 " Markdown
 autocmd FileType markdown setlocal wrap linebreak nolist
 
+" Javascript
+autocmd FileType javascript,css setlocal expandtab
+
+" Apache configurations
+autocmd BufNewFile,BufReadPost *.conf set filetype=apache
+
 " PHP
 autocmd FileType php setlocal colorcolumn=100
 

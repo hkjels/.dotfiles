@@ -47,3 +47,7 @@ noremap <d-s-left> :tabprevious<cr>
 vnoremap < <gv
 vnoremap > >gv
 
+" Sparkup
+let g:sparkupExecuteMapping = '<c-y>'
+let g:sparkupNextMapping = '<c-k>'
+
