@@ -1,27 +1,31 @@
+filetype off
+set encoding=utf-8
+set exrc
+set secure
+set tags=tags
+set nobk nowb noswf
+set lazyredraw
+set ttyfast
+set autoread
+set wrap linebreak
+set scrolloff=10
+set autowriteall
+au FocusLost * silent! :wa
+au TabLeave * silent! :wa
+filetype plugin indent on
 
-" Global configurations
-"""""""""""""""""""""""
-  set encoding=utf-8"{{{
-  set nocompatible
-  set exrc
-  set secure
-  set tags=tags
-  set nobk nowb noswf
-  set lazyredraw
-  set ttyfast
-  set wrap linebreak
-  set scrolloff=10
-
-  filetype plugin indent on
-
-" Vundle package-management"}}}
+"--------------------------------------
+" Vundle package-management
 " @see https://github.com/gmarik/vundle
-"""""""""""""""""""""""""""""""""""""""
+"--------------------------------------
   set rtp+=~/.dotfiles/vim/bundle/vundle/
   call vundle#rc()
   Bundle 'gmarik/vundle'
 
+"-------
 " System
+"-------
+
   Bundle 'scrooloose/nerdtree'
   Bundle 'tpope/vim-fugitive'
   Bundle 'mattn/gist-vim'
@@ -43,13 +47,18 @@
   Bundle 'AndrewRadev/sideways.vim'
   Bundle 'tpope/vim-speeddating'
 
-" Source scripts from the .dotfiles/vim directory
-" TODO have them be symlinked to .vim/plugins on install
+"---------------------------------
+" Source additional configurations
+"---------------------------------
+
   for file in split(glob('~/.dotfiles/vim/*.vim'), '\n')
       exec 'source' file
   endfor
 
+" --------
 " Wildmenu
+" --------
+
   set wildmenu
   set wildmode=list:longest
   set wildignore+=.hg,.git,.svn                    " Version control
@@ -65,42 +74,35 @@
   set wildignore+=node_modules                     " Node project-dependencies
   set wildignore+=curses.h                         " Ctags storage
 
-" Autosave when losing focus
-  set autowriteall
-  au FocusLost * silent! :wa
-  au TabLeave * silent! :wa
-
-" Resize splits when window is resized
-  au VimResized * exe "normal! \<c-w>="
-
+"------
 " Basic
+"------
+
+  au VimResized * exec "normal! \<c-w>="
   set mouse=a
-  set number                           " always show line numbers
-  set hidden                           " Allow un-saved buffers in background
-  set clipboard=unnamed                " Share system clipboard.
-  set backspace=indent,eol,start       " Make backspace behave normally.
+  set hidden                           " allow un-saved buffers in background
+  set clipboard=unnamed                " share system clipboard.
+  set backspace=indent,eol,start       " make backspace behave normally.
   set directory=/tmp//                 " swap files
-  set backupskip=/tmp/*,/private/tmp/*
-  set ffs=unix,dos,mac                 " Default file types
-  set nowrap                           " don't wrap lines
-  set showmatch                        " set show matching parenthesis
+  set backupskip=/tmp/*,/private/tmp/* " skip backup
+  set ffs=unix,dos,mac                 " default file types
   set gdefault                         " search with global by default
   set ignorecase                       " ignore case when searching
-  set smartcase                        " ignore case if search pattern is all lowercase,
-                                      " case-sensitive otherwise
+  set smartcase                        " ignore case if pattern is lowercase
   set incsearch                        " show search matches as you type
   set history=1000                     " remember more commands and search history
   set undolevels=1000                  " use many muchos levels of undo
   set title                            " change the terminal's title
-  set visualbell                       " don't beep
-  set noerrorbells                     " don't beep
+  set visualbell                       " don't beep!
+  set noerrorbells                     " don't beep!
 
   " Special characters for hilighting non-priting spaces/tabs/etc.
   set list listchars=tab:→\ ,trail:·
 
 
+"----------------------
 " Plugin configurations
-""""""""""""""""""""""""
+"----------------------
 
   " Gist
   let g:gist_clip_command = 'pbcopy'

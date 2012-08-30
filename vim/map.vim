@@ -3,13 +3,13 @@
 let mapleader = ","
 let g:mapleader = ","
 
-" Get rid of search hilighting with ,/
+" Remove highlighted search-query with
 nnoremap <silent> <leader>/ :nohlsearch<CR>
 
-" Fix those pesky situations where you edit & need sudo to save
+" Sudo like a boss
 cmap w!! w !sudo tee % >/dev/null
 
-" Normal regular-expressions search
+" Normalize regular-expression searches
 nnoremap / /\v
 vnoremap / /\v
 
@@ -29,7 +29,7 @@ nnoremap <Leader>cd :cd %:h<CR>
 nnoremap <c-h> :SidewaysLeft<cr>
 nnoremap <c-l> :SidewaysRight<cr>
 
-" Force the use of hjkl keys
+" Force the use of hjkl keys to move around
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>
