@@ -1,3 +1,19 @@
+"
+" .vimrc
+" ======
+"
+" __My personal preferences for vim, gvim and mvim.
+"
+" ### Worth noting
+"
+" * Uses Vundle to manage packages
+" * Arrow-keys are disabled in favor of hjkl
+" * Comes bundled with a bunch of great plugins
+"
+" Author: Henrik Kjelsberg <hkjels@me.com> (http://take.no/)
+" Version: 0.0.1
+"
+
 filetype off
 set encoding=utf-8
 set exrc
@@ -12,6 +28,7 @@ set scrolloff=10
 set autowriteall
 au FocusLost * silent! :wa
 au TabLeave * silent! :wa
+set shell=/usr/local/bin/zsh
 filetype plugin indent on
 
 "--------------------------------------
@@ -26,10 +43,11 @@ filetype plugin indent on
 " System
 "-------
 
-  Bundle 'scrooloose/nerdtree'
   Bundle 'tpope/vim-fugitive'
+  Bundle 'tpope/vim-unimpaired'
   Bundle 'mattn/gist-vim'
   Bundle 'majutsushi/tagbar'
+  Bundle 'xolox/vim-easytags'
   Bundle 'mileszs/ack.vim'
   Bundle 'scrooloose/nerdcommenter'
   Bundle 'tpope/vim-surround'
@@ -37,7 +55,7 @@ filetype plugin indent on
   Bundle 'ervandew/supertab'
   Bundle 'Raimondi/delimitMate'
   Bundle 'kien/rainbow_parentheses.vim'
-  Bundle 'sophacles/vim-bundle-sparkup'
+  Bundle 'emilkje/sparkup-bundle'
   Bundle 'danro/rename.vim'
   Bundle 'kien/ctrlp.vim'
   Bundle 'chrisbra/NrrwRgn'

@@ -8,9 +8,9 @@
   ci       = commit -v
   co       = checkout
   d        = diff --word-diff
-  lc       = show -s --format     = '%ct' HEAD
-  lg       = log --graph --pretty = format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date = relative
-  lp       = log --graph --pretty = format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date                    = relative
+  lc       = show -s --format= '%ct' HEAD
+  lg       = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  lp       = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   m        = merge
   rb       = rebase
   remotes  = remote -v

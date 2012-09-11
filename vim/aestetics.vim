@@ -4,7 +4,6 @@
 "--------------------
 
 Bundle 'hkjels/focus.vim'
-Bundle 'skammer/vim-css-color'
 
 
 "---------------------

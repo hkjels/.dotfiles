@@ -14,10 +14,7 @@ nnoremap / /\v
 vnoremap / /\v
 
 " Ack
-nnoremap <leader>a :Ack
-
-" NERDTree
-nnoremap <Leader>g :NERDTreeToggle<CR>
+nnoremap <leader>a :Ack 
 
 " TagBar
 nnoremap <silent> <F2> :TagbarToggle<CR>
@@ -36,8 +33,8 @@ map <left> <nop>
 map <right> <nop>
 
 " Staying focused
-nnoremap <F4> :call ToggleFocusMode()<cr>
-nnoremap <F10> :call NumberToggle()<cr>
+nnoremap <C-f> :call ToggleFocusMode#ToggleFocusMode()<cr>
+nnoremap <C-n> :call NumberToggle()<cr>
 
 " Easy tab-switching
 noremap <d-s-right> :tabnext<cr>

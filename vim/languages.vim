@@ -42,10 +42,11 @@ au BufNewFile,BufReadPost *.conf set filetype=apache
 au FileType python let g:pep8_map='<F4>'
 
 " Stylus
-au BufNewFile,BufReadPost *.styl set filetype=stylus setlocal expandtab
+au BufNewFile,BufReadPost *.styl set filetype=stylus
 
 " Jade
-au BufNewFile,BufReadPost *.jade set filetype=jade setlocal expandtab
+au BufNewFile,BufReadPost *.jade set filetype=jade
+au FileType jade,stylus setlocal expandtab
 
 " Coffeescript
 au BufNewFile,BufReadPost *.coffee set filetype=coffee setlocal expandtab
