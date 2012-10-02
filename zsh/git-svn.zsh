@@ -35,6 +35,10 @@ s() {
             shift
             git svn dcommit $@
         ;;
+        ("pull")
+            shift
+            git svn rebase
+        ;;
         (*)
             echo $* | xargs git
         ;;

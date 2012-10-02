@@ -39,4 +39,8 @@ chpwd() {
 }
 
 
+# Github alias
+eval "$(hub alias -s)"
+
+
 export PATH=$PATH:$HOME/.dotfiles/bin

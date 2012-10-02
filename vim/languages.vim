@@ -1,56 +1,25 @@
 
-"--------------------
-" Module dependencies
-"--------------------
-
-  Bundle 'leshill/vim-json'
-  Bundle 'tpope/vim-haml'
-  Bundle 'kchmck/vim-coffee-script'
-  Bundle 'plasticboy/vim-markdown'
-  Bundle 'jcf/vim-latex'
-  Bundle 'digitaltoad/vim-jade'
-  Bundle 'wavded/vim-stylus'
-  Bundle 'msanders/cocoa.vim'
-  Bundle 'chrisbra/csv.vim'
-  Bundle 'kevinw/pyflakes-vim'
-  Bundle 'fs111/pydoc.vim'
-  Bundle 'vim-scripts/pep8'
-  Bundle 'atourino/jinja.vim'
-  Bundle 'vim-scripts/python_match.vim'
-  Bundle "vim-ruby/vim-ruby"
-  Bundle 'tpope/vim-endwise'
-  Bundle 'tpope/vim-liquid'
-
-
 "------------------------
 " Language configurations
 "------------------------
 
-" Crontab
-au FileType crontab setlocal backupcopy=yes
-
 " Markdown
-au FileType markdown setlocal wrap linebreak nolist
+au BufNewFile,BufReadPost *.md set filetype=markdown
 
-" Javascript
-au FileType javascript,css setlocal expandtab
+" Bundles file
+au BufNewFile,BufReadPost *.bundles set filetype=vim
 
 " Apache configurations
 au BufNewFile,BufReadPost *.conf set filetype=apache
-
-" Python
-au FileType python let g:pep8_map='<F4>'
 
 " Stylus
 au BufNewFile,BufReadPost *.styl set filetype=stylus
 
 " Jade
 au BufNewFile,BufReadPost *.jade set filetype=jade
-au FileType jade,stylus setlocal expandtab
 
 " Coffeescript
-au BufNewFile,BufReadPost *.coffee set filetype=coffee setlocal expandtab
-au BufNewFile,BufReadPost *.coffee setlocal foldmethod=indent
+au BufNewFile,BufReadPost *.coffee set filetype=coffee
 
 
 "-----------

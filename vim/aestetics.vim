@@ -1,11 +1,4 @@
 
-"--------------------
-" Module dependencies
-"--------------------
-
-Bundle 'hkjels/focus.vim'
-
-
 "---------------------
 " Activate colorscheme
 "---------------------

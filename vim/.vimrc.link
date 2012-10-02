@@ -31,40 +31,6 @@ au TabLeave * silent! :wa
 set shell=/usr/local/bin/zsh
 filetype plugin indent on
 
-"--------------------------------------
-" Vundle package-management
-" @see https://github.com/gmarik/vundle
-"--------------------------------------
-  set rtp+=~/.dotfiles/vim/bundle/vundle/
-  call vundle#rc()
-  Bundle 'gmarik/vundle'
-
-"-------
-" System
-"-------
-
-  Bundle 'tpope/vim-fugitive'
-  Bundle 'tpope/vim-unimpaired'
-  Bundle 'mattn/gist-vim'
-  Bundle 'majutsushi/tagbar'
-  Bundle 'xolox/vim-easytags'
-  Bundle 'mileszs/ack.vim'
-  Bundle 'scrooloose/nerdcommenter'
-  Bundle 'tpope/vim-surround'
-  Bundle 'scrooloose/syntastic'
-  Bundle 'ervandew/supertab'
-  Bundle 'Raimondi/delimitMate'
-  Bundle 'kien/rainbow_parentheses.vim'
-  Bundle 'emilkje/sparkup-bundle'
-  Bundle 'danro/rename.vim'
-  Bundle 'kien/ctrlp.vim'
-  Bundle 'chrisbra/NrrwRgn'
-  Bundle 'edsono/vim-matchit'
-  Bundle 'tsaleh/vim-align'
-  Bundle 'sjl/gundo.vim'
-  Bundle 'AndrewRadev/sideways.vim'
-  Bundle 'tpope/vim-speeddating'
-
 "---------------------------------
 " Source additional configurations
 "---------------------------------
