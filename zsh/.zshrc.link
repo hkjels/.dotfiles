@@ -6,6 +6,13 @@ if [ -f $HOME/.profile ]; then
     source $HOME/.profile
 fi
 
+
+
+# Load zsh highlight
+
+source $ZSH/zsh-highlight/zsh-syntax-highlighting.zsh
+
+
 # Load zshuery
 
 source $ZSH/zshuery/zshuery.sh
@@ -15,9 +22,11 @@ load_lol_aliases
 load_completion $ZSH/zshuery/completion
 load_correction
 
+
 # Prompt appearence
 
 prompts '%{$fg_bold[green]%}$(COLLAPSED_DIR)%{$reset_color%}$(virtualenv_info) %{$fg[yellow]%}${$(prompt_char)/\$/λ}%{$reset_color%} ' '%{$fg[red]%}$(ruby_version)%{$reset_color%}'
+
 
 # Path & editor choice
 
@@ -29,9 +38,10 @@ else
   export EDITOR='vim -f'
 fi
 
+
 # Load configurations
 
-for file in $ZSH/**/*.zsh
+for file in $ZSH/*.zsh
   source $file
 
 chpwd() {

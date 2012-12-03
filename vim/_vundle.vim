@@ -51,6 +51,7 @@ Bundle 'vim-scripts/python_match.vim'
 Bundle "vim-ruby/vim-ruby"
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-liquid'
+Bundle 'skwp/vim-html-escape'
 
 " Color-scheme
 

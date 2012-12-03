@@ -22,7 +22,9 @@
   sta      = stash apply
   stls     = stash list
   stp      = stash pop
+  stu      = stash unstaged
   sts      = stash save
+  std      = stash drop
   tags     = tag -l
   undo     = reset --soft HEAD^
   unstage  = reset HEAD --

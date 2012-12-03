@@ -48,3 +48,7 @@ vnoremap > >gv
 let g:sparkupExecuteMapping = '<c-y>'
 let g:sparkupNextMapping = '<c-k>'
 
+" Window manipulation
+map <c-w>+ :10winc ><cr>
+map <c-w>- :10winc <<cr>
+

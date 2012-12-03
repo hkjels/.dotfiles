@@ -14,7 +14,6 @@
 " Version: 0.0.1
 "
 
-filetype off
 set encoding=utf-8
 set exrc
 set secure
@@ -29,7 +28,7 @@ set autowriteall
 au FocusLost * silent! :wa
 au TabLeave * silent! :wa
 set shell=/usr/local/bin/zsh
-filetype plugin indent on
+filetype plugin on
 
 "---------------------------------
 " Source additional configurations
