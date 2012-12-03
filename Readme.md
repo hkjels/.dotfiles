@@ -1,35 +1,17 @@
 
 # dotfiles
 
-__My personal zshell, vim & git preferences__
 
-
-
-## Behavior
-
-I mostly code on OS-X, so these preferences are more optimized for Darwin than
-Linux, but I've taken Linux into concideration. The key-bindings in zsh is set
-up to somewhat mimic vim, but with addition of a few usefull emacs-like
-bindings.
-
-
-## Install
+### Install
 
     curl https://raw.github.com/hkjels/.dotfiles/master/install.sh | sh
 
-
-## Uninstall
+### Uninstall
 
     curl https://raw.github.com/hkjels/.dotfiles/master/uninstall.sh | sh
 
 
-## Usefull information
-
-*  Extends zshuery and janus.vim
-*  Use \`pkg\` for managing packages
-
-
-## License
+### License
 
 > (The MIT License)
 >

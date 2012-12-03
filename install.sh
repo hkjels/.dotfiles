@@ -9,8 +9,7 @@ DOTFILES=$HOME/.dotfiles
 # Install .dotfiles
 
 echo "\n    Fetch .dotfiles\n"
-git clone https://github.com/hkjels/.dotfiles $DOTFILES; cd $DOTFILES
-git submodule update --init --recursive
+git clone --recursive https://github.com/hkjels/.dotfiles $DOTFILES; cd $DOTFILES
 
 
 # Make `pkg install` available
@@ -42,6 +41,7 @@ fi
 
 echo "\n    Symlink .dotfiles to $HOME\n"
 for file in $(find $DOTFILES -type f -name "*.link"); do ln -is $file $HOME/$(basename ${file%.link}); done
+echo "\n[include]\n path = ~/.dotfiles/git/.gitconfig\n" >> ~/.gitconfig
 
 
 # Install vim-bundles
