@@ -17,14 +17,15 @@
   root     = !pwd
   s        = status -s
   sci      = dcommit -v
+  sf       = submodule foreach
   srb      = svn rebase
   st       = stash
   sta      = stash apply
+  std      = stash drop
   stls     = stash list
   stp      = stash pop
-  stu      = stash unstaged
   sts      = stash save
-  std      = stash drop
+  stu      = stash unstaged
   tags     = tag -l
   undo     = reset --soft HEAD^
   unstage  = reset HEAD --

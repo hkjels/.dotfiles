@@ -1,0 +1,11 @@
+
+# Use vi-styled key bindings
+
+set editing-mode vi
+
+
+# Bind arrow keys to history-search
+
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-search-forward
+

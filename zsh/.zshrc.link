@@ -18,14 +18,26 @@ source $ZSH/zsh-highlight/zsh-syntax-highlighting.zsh
 source $ZSH/zshuery/zshuery.sh
 load_defaults
 load_aliases
-load_lol_aliases
 load_completion $ZSH/zshuery/completion
 load_correction
 
 
 # Prompt appearence
 
+vc_info () {
+  GIT_BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+  if [[ -n $GIT_BRANCH ]] then
+    if [[ -n $(git status -s) ]] then
+      GIT_STATUS_COLOR=yellow
+    else
+      GIT_STATUS_COLOR=green
+    fi
+    echo "(%{$fg_bold[$GIT_STATUS_COLOR]%}$GIT_BRANCH%{$reset_color%})" && return
+  fi
+}
+
 prompts '%{$fg_bold[green]%}$(COLLAPSED_DIR)%{$reset_color%}$(virtualenv_info) %{$fg[yellow]%}${$(prompt_char)/\$/λ}%{$reset_color%} ' '%{$fg[red]%}$(ruby_version)%{$reset_color%}'
+RPROMPT='$(vc_info)'
 
 
 # Path & editor choice

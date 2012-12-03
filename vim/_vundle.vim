@@ -9,6 +9,7 @@ Bundle 'gmarik/vundle'
 
 " System
 
+Bundle 'gregsexton/gitv'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'mattn/gist-vim'
