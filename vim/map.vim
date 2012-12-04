@@ -35,6 +35,7 @@ map <right> <nop>
 " Staying focused
 nnoremap <C-f> :call ToggleFocusMode#ToggleFocusMode()<cr>
 nnoremap <C-n> :call NumberToggle()<cr>
+nnoremap <leader>f :call ToggleSchemeFlavor#ToggleSchemeFlavor()<cr>
 
 " Easy tab-switching
 noremap <d-s-right> :tabnext<cr>

@@ -53,4 +53,4 @@ vim +BundleInstall +qall
 # Change shell to zsh
 
 chsh -s /usr/local/bin/zsh $(whoami)
-/usr/local/bin/zsh
+/usr/bin/env zsh
