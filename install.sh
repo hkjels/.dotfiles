@@ -1,5 +1,4 @@
-#!/usr/bin/env bash
-
+#!/usr/bin/env zsh
 
 # Paths
 
@@ -8,8 +7,8 @@ DOTFILES=$HOME/.dotfiles
 
 # Install .dotfiles
 
-echo "\n    Fetch .dotfiles\n"
-git clone --recursive https://github.com/hkjels/.dotfiles $DOTFILES; cd $DOTFILES
+echo "\n    Fetching .dotfiles\n"
+git clone --recursive https://github.com/hkjels/.dotfiles $DOTFILES &> /dev/null
 
 
 # Make `pkg install` available
@@ -26,31 +25,22 @@ fi
 
 # Install dependencies
 
-if [[ ! -x `which zsh` ]]; then
-  pkg install zsh
-fi
-if [[ ! -x `which z` ]]; then
-  pkg install z
-fi
-if [[ ! -x `which ctags` ]]; then
-  pkg install ctags
-fi
+pkg install z &> /dev/null
+pkg install ctags &> /dev/null
 
 
 # Link dotfiles to current user
 
-echo "\n    Symlink .dotfiles to $HOME\n"
+echo "\n    Creating symlinks\n"
 for file in $(find $DOTFILES -type f -name "*.link"); do ln -is $file $HOME/$(basename ${file%.link}); done
 echo "\n[include]\n path = ~/.dotfiles/git/.gitconfig\n" >> ~/.gitconfig
 
 
 # Install vim-bundles
 
-echo "\n    Setup vim with vundle, (this might take a while!)\n"
-vim +BundleInstall +qall
+echo "\n    Installing vim dependencies (this might take a while!)\n"
+vim +BundleInstall +qall &> /dev/null
 
 
-# Change shell to zsh
+echo "\n    Setup complete!\n"
 
-chsh -s /usr/local/bin/zsh $(whoami)
-/usr/bin/env zsh
