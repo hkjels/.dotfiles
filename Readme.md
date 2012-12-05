@@ -1,10 +1,13 @@
 
 # dotfiles
 
-Dotfiles are the hidden preferences of a unix-based system. My dotfiles
-takes extensive advantage of zsh, git and vim. Since I prefer a particular
-set of tools, these will be installed if their missing from your system.
+Dotfiles are the hidden preferences of a unix-based system.
 
+### Requirements
+
+* z-shell
+* git
+* vim
 
 ### Install
 

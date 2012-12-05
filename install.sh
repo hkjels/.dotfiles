@@ -42,5 +42,6 @@ echo "\n    Installing vim dependencies (this might take a while!)\n"
 vim +BundleInstall +qall &> /dev/null
 
 
+source $HOME/.zshrc
 echo "\n    Setup complete!\n"
 
