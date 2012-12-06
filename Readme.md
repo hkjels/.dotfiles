@@ -1,7 +1,14 @@
 
 # dotfiles
 
-Dotfiles are the hidden preferences of a unix-based system.
+Dotfiles are the hidden preferences of a unix-based system. These
+preferences are merely a backbone for your *nix needs and will need some
+additional lovin to fulfill your stack; This is why I've made it possible
+to override all of the preferences from local dotfiles, so that you don't
+have to put task-specific preferences along with this set of defaults. If
+you find any of the defaults really annoying or that something is missing
+of the bat, let me know with a pull-request or issue.
+
 
 ### Requirements
 
@@ -9,13 +16,21 @@ Dotfiles are the hidden preferences of a unix-based system.
 * git
 * vim
 
+
 ### Install
 
     curl https://raw.github.com/hkjels/.dotfiles/master/install.sh | sh
 
+
 ### Uninstall
 
     curl https://raw.github.com/hkjels/.dotfiles/master/uninstall.sh | sh
+
+
+### Contributors
+
+* Your name should be here
+* Henrik Kjelsberg [hkjels](http://hkjels.github.com/)
 
 
 ### License
