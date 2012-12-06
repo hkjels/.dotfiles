@@ -8,7 +8,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " System
-
 Bundle 'gregsexton/gitv'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-unimpaired'
@@ -34,7 +33,6 @@ Bundle 'AndrewRadev/sideways.vim'
 Bundle 'tpope/vim-speeddating'
 
 " Language and editing
-
 Bundle 'leshill/vim-json'
 Bundle 'tpope/vim-haml'
 Bundle 'kchmck/vim-coffee-script'
@@ -55,6 +53,5 @@ Bundle 'tpope/vim-liquid'
 Bundle 'skwp/vim-html-escape'
 
 " Color-scheme
-
 Bundle 'hkjels/focus.vim'
 

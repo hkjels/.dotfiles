@@ -25,3 +25,19 @@ if has('gui_running')
   set guioptions=-t
 endif
 
+
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set shiftround
+set smarttab
+set autoindent
+set copyindent
+set foldmethod=indent
+set foldlevel=99
+set smartindent
+set splitbelow
+set splitright
+
+

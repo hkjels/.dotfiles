@@ -21,20 +21,3 @@ au BufNewFile,BufReadPost *.jade set filetype=jade
 " Coffeescript
 au BufNewFile,BufReadPost *.coffee set filetype=coffee
 
-
-"-----------
-" Aesthetics
-"-----------
-
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab
-set shiftround
-set smarttab
-set autoindent
-set copyindent
-set foldmethod=indent
-set foldlevel=99
-set smartindent
-

@@ -13,6 +13,13 @@ cmap w!! w !sudo tee % >/dev/null
 nnoremap / /\v
 vnoremap / /\v
 
+" Center screen on alternative navigation
+nnoremap n nzz
+nnoremap } }zz
+
+" Expected behavior of yank
+nnoremap Y y$
+
 " Ack
 nnoremap <leader>a :Ack 
 

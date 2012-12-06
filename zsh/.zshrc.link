@@ -66,3 +66,8 @@ eval "$(hub alias -s)"
 
 
 export PATH=$PATH:$HOME/.dotfiles/bin
+
+if [[ -r $HOME/.zshrc.local ]]; then
+  source $HOME/.zshrc.local
+fi
+

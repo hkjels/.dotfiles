@@ -17,7 +17,6 @@
 set encoding=utf-8
 set exrc
 set secure
-set tags=tags
 set nobk nowb noswf
 set lazyredraw
 set ttyfast
@@ -37,6 +36,10 @@ filetype plugin on
   for file in split(glob('~/.dotfiles/vim/*.vim'), '\n')
       exec 'source' file
   endfor
+
+  if filereadable(glob("~/.vimrc.local")) 
+      source ~/.vimrc.local
+  endif
 
 " --------
 " Wildmenu
