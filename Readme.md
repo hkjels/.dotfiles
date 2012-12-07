@@ -1,5 +1,6 @@
 
-# dotfiles
+KISS dotfiles
+=============
 
 Dotfiles are the hidden preferences of a unix-based system. These
 preferences are merely a backbone for your *nix needs and will need some
@@ -25,6 +26,19 @@ of the bat, let me know with a pull-request or issue.
 ### Uninstall
 
     curl https://raw.github.com/hkjels/.dotfiles/master/uninstall.sh | sh
+
+
+### Cli
+
+    Usage: kiss [options] <command>
+
+    Options:
+      -h, --help        output usage information
+      -v, --version     output version-number
+
+    Commands:
+      upgrade           install latest version of KISS dotfiles
+      tip               will output a random tip about zsh, git or vim
 
 
 ### Contributors

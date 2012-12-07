@@ -21,3 +21,6 @@ au BufNewFile,BufReadPost *.jade set filetype=jade
 " Coffeescript
 au BufNewFile,BufReadPost *.coffee set filetype=coffee
 
+" Javascript
+au FileType javascript set dictionary+=$HOME/.vim/bundle/vim-node/dict/node.dict
+
