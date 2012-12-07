@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-version="0.0.01"
+version="0.0.02"
 DOTFILES=$HOME/.dotfiles
 
 
@@ -26,8 +26,8 @@ EOF
 while test $# -ne 0; do
   arg=$1; shift
   case $arg in
-    update)
-      onlineVersion=$(curl https://raw.github.com/hkjels/.dotfiles/master/bin/kiss | sh)
+    upgrade)
+      onlineVersion=$(curl -s https://raw.github.com/hkjels/.dotfiles/master/bin/kiss | sh)
       if [[ $onlineVersion > $version ]]; then
         curl https://raw.github.com/hkjels/.dotfiles/master/install.sh | sh
       else
