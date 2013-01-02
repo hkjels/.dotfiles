@@ -25,9 +25,9 @@ load_correction
 # Prompt appearence
 
 vc_info () {
-  GIT_BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+  GIT_BRANCH=$(command git rev-parse --abbrev-ref HEAD 2>/dev/null)
   if [[ -n $GIT_BRANCH ]] then
-    if [[ -n $(git status -s) ]] then
+    if [[ -n $(command git status -s) ]] then
       GIT_STATUS_COLOR=yellow
     else
       GIT_STATUS_COLOR=green
