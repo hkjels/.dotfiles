@@ -105,12 +105,6 @@ filetype plugin on
   " SnipMate
   let g:snippets_dir = "~/.vim/bundle/snipmate-snippets"
 
-  " Double rainbow
-  au VimEnter * RainbowParenthesesToggle
-  au Syntax * RainbowParenthesesLoadRound
-  au Syntax * RainbowParenthesesLoadSquare
-  au Syntax * RainbowParenthesesLoadBraces
-
   " Syntastic
   set laststatus=2
   let g:syntastic_enable_signs=1

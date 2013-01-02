@@ -39,6 +39,10 @@ map <up> <nop>
 map <down> <nop>
 map <left> <nop>
 map <right> <nop>
+inoremap <left>  <nop>
+inoremap <right> <nop>
+inoremap <up>    <nop>
+inoremap <down>  <nop>
 
 " Staying focused
 nnoremap <C-f> :call ToggleFocusMode#ToggleFocusMode()<cr>
