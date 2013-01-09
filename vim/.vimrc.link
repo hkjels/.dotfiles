@@ -17,16 +17,11 @@
 set encoding=utf-8
 set exrc
 set secure
-set nobk nowb noswf
+set nobk nowb
 set lazyredraw
 set ttyfast
 set autoread
-set wrap linebreak
-set scrolloff=10
 set autowriteall
-au FocusLost * silent! :wa
-au TabLeave * silent! :wa
-set shell=/usr/local/bin/zsh
 filetype plugin on
 
 "---------------------------------
@@ -46,12 +41,11 @@ filetype plugin on
 " --------
 
   set wildmenu
-  set wildmode=list:longest
+  set wildmode=list:longest,full
   set wildignore+=.hg,.git,.svn                    " Version control
   set wildignore+=*.aux,*.out,*.toc                " LaTeX intermediate files
   set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
   set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
-  set wildignore+=*.spl                            " compiled spelling word lists
   set wildignore+=*.sw?                            " Vim swap files
   set wildignore+=*.DS_Store                       " OSX bullshit
   set wildignore+=*.luac                           " Lua byte code
@@ -69,22 +63,27 @@ filetype plugin on
   set hidden                           " allow un-saved buffers in background
   set clipboard=unnamed                " share system clipboard.
   set backspace=indent,eol,start       " make backspace behave normally.
-  set directory=/tmp//                 " swap files
-  set backupskip=/tmp/*,/private/tmp/* " skip backup
+  set directory=/tmp/                  " swap files
   set ffs=unix,dos,mac                 " default file types
   set gdefault                         " search with global by default
-  set ignorecase                       " ignore case when searching
   set smartcase                        " ignore case if pattern is lowercase
   set incsearch                        " show search matches as you type
-  set history=1000                     " remember more commands and search history
-  set undolevels=1000                  " use many muchos levels of undo
+  set history=500                      " remember more commands and search history
+  set undolevels=500                   " use many muchos levels of undo
   set title                            " change the terminal's title
-  set visualbell                       " don't beep!
-  set noerrorbells                     " don't beep!
+  set visualbell                       " no bells!
+  set noerrorbells                     " no whistles!
 
-  " Special characters for hilighting non-priting spaces/tabs/etc.
-  set list listchars=tab:→\ ,trail:·
 
+"------------
+" Performance
+"------------
+
+  " Don't screw up folds when inserting text that might affect them, until
+  " leaving insert mode. Foldmethod is local to the window. Protect against
+  " screwing up folding when switching between windows.
+  autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
+  autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
 
 "----------------------
 " Plugin configurations
@@ -96,8 +95,10 @@ filetype plugin on
   let g:gist_show_privates = 1
 
   " TagBar
-  let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
-  let g:tagbar_autoshowtag = 1
+  " I've disabled tagbar. Using tags is not yet in my workflow and there
+  " are some performance issues I need to attend, in order to re-enable them.
+  "let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
+  "let g:tagbar_autoshowtag = 1
 
   " NERDTree
   let g:ctrlp_dont_split = 'NERD_tree_2'

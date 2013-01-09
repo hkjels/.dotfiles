@@ -4,6 +4,7 @@ let mapleader = ","
 let g:mapleader = ","
 
 " Remove highlighted search-query with
+nnoremap <CR> :nohlsearch<CR>
 nnoremap <silent> <leader>/ :nohlsearch<CR>
 
 " Sudo like a boss
@@ -22,7 +23,8 @@ nnoremap } }zz
 nnoremap Y y$
 
 " Ack
-nnoremap <leader>a :Ack 
+cmap ack Ack! 
+nnoremap <leader>a :Ack! 
 
 " TagBar
 nnoremap <silent> <F2> :TagbarToggle<CR>
@@ -49,10 +51,6 @@ nnoremap <C-f> :call ToggleFocusMode#ToggleFocusMode()<cr>
 nnoremap <C-n> :call NumberToggle()<cr>
 nnoremap <leader>f :call ToggleSchemeFlavor#ToggleSchemeFlavor()<cr>
 
-" Easy tab-switching
-noremap <d-s-right> :tabnext<cr>
-noremap <d-s-left> :tabprevious<cr>
-
 " Prevent de-select when indenting blocks
 vnoremap < <gv
 vnoremap > >gv
@@ -71,6 +69,9 @@ nmap <leader>et :tabe <C-R>=expand('%:h').'/'<cr>
 map <c-w>+ :10winc ><cr>
 map <c-w>- :10winc <<cr>
 
+" Easy tab-switching
+noremap <d-s-right> :tabnext<cr>
+noremap <d-s-left> :tabprevious<cr>
 
 if has("gui_macvim") && has("gui_running")
   " Map Command-# to switch tabs
@@ -117,4 +118,7 @@ else
   map  <C-9> 9gt
   imap <C-9> <Esc>9gt
 endif
+
+" Allow undo for Insert Mode ^u (thanks, osse!) - see: :help i_CTRL-G_u
+inoremap <C-u> <C-g>u<C-u>
 

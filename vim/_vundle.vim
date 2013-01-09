@@ -24,13 +24,13 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'sjl/gundo.vim'
-Bundle 'slack/vim-bufexplorer'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tsaleh/vim-align'
-Bundle 'xolox/vim-easytags'
+"Bundle 'xolox/vim-easytags'
+Bundle 'hkjels/pretty.vim'
 
 " Language and editing
 Bundle "vim-ruby/vim-ruby"
@@ -52,6 +52,9 @@ Bundle 'tpope/vim-liquid'
 Bundle 'vim-scripts/pep8'
 Bundle 'vim-scripts/python_match.vim'
 Bundle 'wavded/vim-stylus'
+Bundle 'lukerandall/haskellmode-vim'
+Bundle 'oscarh/vimerl'
+Bundle 'tpope/vim-ragtag'
 
 " Color-scheme
 Bundle 'hkjels/focus.vim'
