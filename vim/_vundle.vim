@@ -31,6 +31,7 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'tsaleh/vim-align'
 "Bundle 'xolox/vim-easytags'
 Bundle 'hkjels/pretty.vim'
+Bundle 'joonty/vdebug'
 
 " Language and editing
 Bundle "vim-ruby/vim-ruby"
@@ -55,6 +56,7 @@ Bundle 'wavded/vim-stylus'
 Bundle 'lukerandall/haskellmode-vim'
 Bundle 'oscarh/vimerl'
 Bundle 'tpope/vim-ragtag'
+Bundle 'vim-scripts/PHP-correct-Indenting'
 
 " Color-scheme
 Bundle 'hkjels/focus.vim'

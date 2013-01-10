@@ -30,7 +30,6 @@
     set guioptions=-t
   endif
 
-  set wrap linebreak
   set scrolloff=10
   set tabstop=2
   set shiftwidth=2

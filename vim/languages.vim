@@ -3,6 +3,8 @@
 " Language configurations
 "------------------------
 
+set spell
+
 augroup filetypedetect
 
   " Apache configurations
@@ -24,7 +26,7 @@ augroup END
 au FileType javascript set dictionary+=$HOME/.vim/bundle/vim-node/dict/node.dict
 
 " Haskell
-au BufEnter *.hs compiler ghc
+au FileType haskell set compiler=ghc
 
 " Html
 au FileType html set matchpairs+=<:>
