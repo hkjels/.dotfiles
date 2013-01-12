@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-version="0.0.02"
+version="0.0.03"
 DOTFILES=$HOME/.dotfiles
 
 
