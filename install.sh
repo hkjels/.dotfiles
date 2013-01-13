@@ -12,7 +12,7 @@ git clone --recursive https://github.com/hkjels/.dotfiles $DOTFILES &> /dev/null
 
 # Make `pkg install` available
 
-source $DOTFILES/zsh/pkg.zsh
+source $DOTFILES/zsh/alias.zsh
 
 
 # Make that cursor blazing fast
