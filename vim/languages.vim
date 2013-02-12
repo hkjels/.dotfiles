@@ -8,24 +8,25 @@ set spell
 augroup filetypedetect
 
   " Apache configurations
-  au BufNewFile,BufReadPost *.conf set filetype=apache
+  au BufNewFile,BufRead *.conf set filetype=apache
 
   " Csv
-  au BufNewFile,BufReadPost *.csv,*.dat set filetype=csv
+  au BufNewFile,BufRead *.csv,*.dat set filetype=csv
 
   " Coffee-script
-  au BufNewFile,BufReadPost *.coffee set filetype=coffee
+  au BufNewFile,BufRead *.coffee set filetype=coffee
 
-  au BufEnter *.hs compiler ghc
+  " Haskell
+  au BufNewFile,BufRead *.hs compiler ghc
 
   " Jade
-  au BufNewFile,BufReadPost *.jade set filetype=jade
+  au BufNewFile,BufRead *.jade set filetype=jade
 
   " Markdown
-  au BufNewFile,BufReadPost *.md,*.markdown,*.mdown,*.mkd set filetype=markdown
+  au BufNewFile,BufRead *.md,*.markdown,*.mdown,*.mkd set filetype=markdown
 
   " Stylus
-  au BufNewFile,BufReadPost *.styl set filetype=stylus
+  au BufNewFile,BufRead *.styl set filetype=stylus
 
 augroup END
 

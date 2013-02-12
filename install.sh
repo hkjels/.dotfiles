@@ -24,6 +24,8 @@ fi
 
 # Install dependencies
 
+cd $DOTFILES/zsh/burl/
+make install
 pkg install z ctags &> /dev/null
 pkg install node && npm install json jsctags &> /dev/null
 pkg install cabal-install && cabal install darcs lushtags &> /dev/null

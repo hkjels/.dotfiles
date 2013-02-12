@@ -7,8 +7,9 @@ alias _='sudo'
 alias ll='ls -1'
 alias cr='cd $(g root)'
 
-# Better curl aliases
-# TODO Make #burl available via brew
+
+# Burl aliases
+
 alias GET='burl GET'
 alias POST='burl POST'
 alias PUT='burl PUT'

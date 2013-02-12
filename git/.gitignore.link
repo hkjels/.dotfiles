@@ -1,11 +1,46 @@
+
 # Files
 
 .DS_Store
+.eunit
+deps
 tags
+npm-debug.log
+*.o
+*.beam
+*.hi
+*.plt
+*.chi
+*.chs.h
+*.out
+*.app
+*.gem
+*.rbc
+*.dump
+.virtualenv
 
+
+# Libraries
+
+*.lib
+*.a
+
+
+# Shared objects
+
+*.so*
+*.dylib
 
 
 # Directories
 
 .todo
-npm_modules
+.sass-cache
+node_modules
+lib-cov
+cabal-dev
+.bundle
+coverage
+rdoc
+dist
+

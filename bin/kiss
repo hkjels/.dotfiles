@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-version="0.0.04"
+version="0.0.05"
 DOTFILES=$HOME/.dotfiles
 
 
@@ -15,7 +15,7 @@ usage () {
 
     Commands:
       upgrade           install latest version of KISS dotfiles
-      tip               will output a random tip about zsh, git or vim
+      tip               will output a random tip
 
 EOF
 }

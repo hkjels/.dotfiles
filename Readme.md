@@ -8,7 +8,7 @@ additional lovin to fulfill your stack; This is why I've made it possible
 to override all of the preferences from local dotfiles, so that you don't
 have to put task-specific preferences along with this set of defaults. If
 you find any of the defaults really annoying or that something is missing
-of the bat, let me know with a pull-request or issue.
+of the bat, let me know with an issue; or even better, a pull request.
 
 
 ### Requirements
@@ -26,19 +26,6 @@ of the bat, let me know with a pull-request or issue.
 ### Uninstall
 
     curl https://raw.github.com/hkjels/.dotfiles/master/uninstall.sh | sh
-
-
-### Cli
-
-    Usage: kiss [options] <command>
-
-    Options:
-      -h, --help        output usage information
-      -v, --version     output version-number
-
-    Commands:
-      upgrade           install latest version of KISS dotfiles
-      tip               will output a random tip about zsh, git or vim
 
 
 ### Contributors
