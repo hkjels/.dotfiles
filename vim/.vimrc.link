@@ -43,6 +43,7 @@ filetype plugin on
   set wildmenu
   set wildmode=list:longest,full
   set wildignore+=.hg,.git,.svn                    " Version control
+  set wildignore+=gen                              " Generated files
   set wildignore+=*.aux,*.out,*.toc                " LaTeX intermediate files
   set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
   set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
@@ -52,7 +53,6 @@ filetype plugin on
   set wildignore+=*.pyc                            " Python byte code
   set wildignore+=**.class                         " Cursed Java class files
   set wildignore+=node_modules                     " Node project-dependencies
-  set wildignore+=curses.h                         " Ctags storage
 
 "------
 " Basic
@@ -93,12 +93,6 @@ filetype plugin on
   let g:gist_clip_command = 'pbcopy'
   let g:gist_detect_filetype = 2
   let g:gist_show_privates = 1
-
-  " TagBar
-  " I've disabled tagbar. Using tags is not yet in my workflow and there
-  " are some performance issues I need to attend, in order to re-enable them.
-  "let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
-  "let g:tagbar_autoshowtag = 1
 
   " NERDTree
   let g:ctrlp_dont_split = 'NERD_tree_2'

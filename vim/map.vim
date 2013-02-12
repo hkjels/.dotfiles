@@ -28,6 +28,7 @@ nnoremap <leader>a :Ack!
 
 " TagBar
 nnoremap <silent> <F2> :TagbarToggle<CR>
+nnoremap <silent> <F3> :!/usr/local/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 " Set cwd to this file's path
 nnoremap <Leader>cd :cd %:h<CR>
@@ -35,6 +36,10 @@ nnoremap <Leader>cd :cd %:h<CR>
 " Sideways
 nnoremap <c-h> :SidewaysLeft<cr>
 nnoremap <c-l> :SidewaysRight<cr>
+
+" I would say it's ok to use the mouse when your reading
+" browsing code.
+:map <2-LeftMouse> :exe "tag ". expand("<cword>")<CR>
 
 " Force the use of hjkl keys to move around
 map <up> <nop>

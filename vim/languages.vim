@@ -13,6 +13,8 @@ augroup filetypedetect
   " Csv
   au BufNewFile,BufReadPost *.csv,*.dat set filetype csv
 
+  au BufEnter *.hs compiler ghc
+
   " Jade
   au BufNewFile,BufReadPost *.jade set filetype=jade
 
@@ -29,8 +31,8 @@ augroup END
 au FileType javascript set dictionary+=$HOME/.vim/bundle/vim-node/dict/node.dict
 
 " Haskell
-au FileType haskell set compiler=/usr/local/bin/ghc
-let g:haddock_browser='Safari'
+let g:haddock_browser="open"
+let g:haddock_browser_callformat = "%s %s"
 
 " Html
 au FileType html set matchpairs+=<:>

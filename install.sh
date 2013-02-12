@@ -24,8 +24,9 @@ fi
 
 # Install dependencies
 
-pkg install z &> /dev/null
-pkg install ctags &> /dev/null
+pkg install z ctags &> /dev/null
+pkg install node && npm install json jsctags &> /dev/null
+pkg install cabal-install && cabal install darcs lushtags &> /dev/null
 
 
 # Link dotfiles to current user
