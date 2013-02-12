@@ -11,7 +11,10 @@ augroup filetypedetect
   au BufNewFile,BufReadPost *.conf set filetype=apache
 
   " Csv
-  au BufNewFile,BufReadPost *.csv,*.dat set filetype csv
+  au BufNewFile,BufReadPost *.csv,*.dat set filetype=csv
+
+  " Coffee-script
+  au BufNewFile,BufReadPost *.coffee set filetype=coffee
 
   au BufEnter *.hs compiler ghc
 
