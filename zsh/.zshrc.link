@@ -45,9 +45,9 @@ RPROMPT='$(vc_info)'
 if [[ $IS_MAC -eq 1 ]]; then
   # Add OSX default paths
   eval `/usr/libexec/path_helper -s`
-  export EDITOR='mvim -f'
+  export EDITOR=mvim
 else
-  export EDITOR='vim -f'
+  export EDITOR=vim
 fi
 
 
