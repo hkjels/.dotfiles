@@ -7,12 +7,14 @@
   branches = branch -a
   ci       = commit -v
   co       = checkout
+  cl       = clone --recursive
   d        = diff --word-diff
   lc       = show -s --format= '%ct' HEAD
   lg       = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   lp       = log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"
   m        = merge
   rb       = rebase
+  rbi      = rebase -i origin/master
   remotes  = remote -v
   root     = !pwd
   s        = status -s
