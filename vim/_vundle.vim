@@ -31,6 +31,7 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'tsaleh/vim-align'
 Bundle 'hkjels/pretty.vim'
 Bundle 'joonty/vdebug'
+Bundle 'airblade/vim-gitgutter'
 
 " Language and editing
 Bundle "vim-ruby/vim-ruby"
