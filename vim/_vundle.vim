@@ -61,4 +61,3 @@ Bundle 'msanders/snipmate.vim'
 
 " Color-scheme
 Bundle 'hkjels/focus.vim'
-

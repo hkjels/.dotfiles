@@ -1,6 +1,9 @@
+
 [core]
   pager         = most +s +'/---'
   excludesfile  = ~/.gitignore
+  editor        = "$EDITOR -f"
+
 [alias]
   am       = commit -v --amend
   br       = branch
@@ -31,7 +34,10 @@
   tags     = tag -l
   undo     = reset --soft HEAD^
   unstage  = reset HEAD --
+
 [diff]
   mnemonicprefix = true
+
 [include]
   path = ~/.gitconfig.local
+

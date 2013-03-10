@@ -19,6 +19,9 @@ vnoremap / /\v
 nnoremap n nzz
 nnoremap } }zz
 
+" Scroll using space bar
+nnoremap <Space> <C-F>
+
 " Expected behavior of yank
 nnoremap Y y$
 
