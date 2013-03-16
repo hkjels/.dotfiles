@@ -3,17 +3,21 @@
 let mapleader = ","
 let g:mapleader = ","
 
+" Better focus on search matches
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
 " Remove highlighted search-query with
 nnoremap <CR> :nohlsearch<CR>
 nnoremap <silent> <leader>/ :nohlsearch<CR>
 
-" Sudo like a boss
-cmap w!! w !sudo tee % >/dev/null
-cmap x!! x !sudo tee % >/dev/null
-
 " Normalize regular-expression searches
 nnoremap / /\v
 vnoremap / /\v
+
+" Sudo like a boss
+cmap w!! w !sudo tee % >/dev/null
+cmap x!! x !sudo tee % >/dev/null
 
 " Center screen on alternative navigation
 nnoremap n nzz
