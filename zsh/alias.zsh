@@ -32,3 +32,7 @@ else
   alias pkg='echo "\n    Could not reliably detect any packagemanager\n";return'
 fi
 
+function fname() {
+  find . -name "$1" -print
+}
+
